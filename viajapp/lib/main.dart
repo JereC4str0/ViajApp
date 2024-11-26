@@ -1,14 +1,28 @@
-
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'driver_profile_setup.dart';
 import 'passenger_profile_setup.dart';
 import 'user_profile.dart';
 import 'activities_page.dart';
 import 'home_page.dart';
 import 'settings_page.dart';
-import 'main_app_page.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inicializa Firebase
+  try {
+    await Firebase.initializeApp();
+    print('Firebase inicializado con éxito.');
+  } catch (e) {
+    print('Error al inicializar Firebase: $e');
+  }
+
   runApp(DriveOrRideApp());
 }
 
@@ -93,16 +107,29 @@ class _MainAppPageState extends State<MainAppPage> {
         'to': to,
         'driver': driverName,
         'vehicle': vehicle,
-        'date': DateTime.now().toIso8601String(), // Guardar la fecha
+        'date': DateTime.now().toIso8601String(),
       });
+    });
+
+    // Guardar en Firestore
+    FirebaseFirestore.instance.collection('trips').add({
+      'from': from,
+      'to': to,
+      'driver': driverName,
+      'vehicle': vehicle,
+      'date': DateTime.now().toIso8601String(),
+    }).then((_) {
+      print('Viaje agregado a Firestore con éxito.');
+    }).catchError((error) {
+      print('Error al agregar el viaje: $error');
     });
   }
 
   @override
   Widget build(BuildContext context) {
     List<Widget> _children = [
-      HomePage(onTripCreated: _addTrip), // Pasar la función para agregar viajes
-      ActivitiesPage(trips: trips), // Pasar la lista de viajes
+      HomePage(onTripCreated: _addTrip), // Pasar función para crear viajes
+      ActivitiesPage(trips: trips), // Mostrar viajes
       SettingsPage(userProfile: widget.userProfile),
     ];
 
@@ -137,4 +164,3 @@ class _MainAppPageState extends State<MainAppPage> {
     );
   }
 }
-

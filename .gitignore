@@ -1,0 +1,21 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+build/
+# IDEs
+.idea/
+.vscode/
+# Firebase
+firebase.json
+google-services.json
+# Logs
+*.log
+# Metadata
+.metadata
+# Generated files
+*.iml
+# OS generated files
+.DS_Store
+Thumbs.db
