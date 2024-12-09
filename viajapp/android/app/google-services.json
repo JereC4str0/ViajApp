@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "507228017087",
+    "project_id": "viajapp-bf223",
+    "storage_bucket": "viajapp-bf223.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507228017087:android:40fe9282521d0a8a8a910a",
+        "android_client_info": {
+          "package_name": "com.example.viajapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB9uUqSgi59-aisSETHryR9JuASL971sc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

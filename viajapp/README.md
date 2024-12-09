@@ -1,4 +1,4 @@
-# viajapp
+# altermundi_viajapp
 
 A new Flutter project.
 

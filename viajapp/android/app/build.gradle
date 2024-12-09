@@ -2,59 +2,43 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    id "com.google.gms.google-services"
+    id "com.google.gms.google-services" version "4.4.1" apply true
 }
 
 android {
     namespace "com.example.viajapp"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = flutter.compileSdkVersion // Versión del SDK de compilación
+    ndkVersion = flutter.ndkVersion // Versión de NDK de Flutter
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17 // Compatibilidad con Java 17
         targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = "17" // Configuración del compilador de Kotlin
     }
 
     defaultConfig {
-        applicationId "com.example.viajapp"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode flutter.versionCode
-        versionName flutter.versionName
+        applicationId "com.example.viajapp" // ID de la aplicación
+        minSdk = flutter.minSdkVersion // Versión mínima del SDK
+        targetSdk = flutter.targetSdkVersion // Versión objetivo del SDK
+        versionCode flutter.versionCode // Código de versión
+        versionName flutter.versionName // Nombre de versión
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.debug // Configuración de firma
         }
     }
 }
 
 dependencies {
-    // Firebase BOM
-    implementation platform('com.google.firebase:firebase-bom:32.7.0')
-    // Analytics
-    implementation 'com.google.firebase:firebase-analytics'
-}
-
-buildscript {
-    ext.kotlin_version = '1.9.0'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.4.0'
-    }
+    implementation platform('com.google.firebase:firebase-bom:32.7.0') // Firebase BOM
+    implementation 'com.google.firebase:firebase-analytics' // Firebase Analytics
 }
 
 flutter {
-    source '../..'
+    source '../..' // Ruta al código fuente de Flutter
 }
