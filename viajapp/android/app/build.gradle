@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace "com.example.viajapp"
+    namespace "com.example.altermundi_viajapp"
     compileSdk = flutter.compileSdkVersion // Versión del SDK de compilación
     ndkVersion = flutter.ndkVersion // Versión de NDK de Flutter
 
@@ -20,8 +20,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.viajapp" // ID de la aplicación
-        minSdk = flutter.minSdkVersion // Versión mínima del SDK
+        applicationId "com.example.altermundi_viajapp" // ID de la aplicación
+        minSdk = 23 // Versión mínima del SDK
         targetSdk = flutter.targetSdkVersion // Versión objetivo del SDK
         versionCode flutter.versionCode // Código de versión
         versionName flutter.versionName // Nombre de versión

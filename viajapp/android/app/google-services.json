@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "507228017087",
-    "project_id": "viajapp-bf223",
-    "storage_bucket": "viajapp-bf223.firebasestorage.app"
+    "project_number": "807869095374",
+    "project_id": "altermundi-viajapp",
+    "storage_bucket": "altermundi-viajapp.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:507228017087:android:40fe9282521d0a8a8a910a",
+        "mobilesdk_app_id": "1:807869095374:android:bce753a87fce8839dfdf9f",
         "android_client_info": {
-          "package_name": "com.example.viajapp"
+          "package_name": "com.example.altermundi_viajapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDB9uUqSgi59-aisSETHryR9JuASL971sc"
+          "current_key": "AIzaSyDQ3UVjrmI0CRV-G2Pw-X7D-kWFwF02_JA"
         }
       ],
       "services": {
